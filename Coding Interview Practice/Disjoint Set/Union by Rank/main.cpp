@@ -1,5 +1,9 @@
+// maintain rank array with parent array
+// rank is basically the height of the tree
+
 int Parent[n], rank[n];
 
+// initialize the parent array with rank array
 
 void Initialize()
 {
@@ -11,18 +15,15 @@ void Initialize()
 }
 
 
-int find(int x)
-{
-    if(Parent[x] = x)
-    return x;
-    else
-    return find(Parent[x]);
-}
 
 void Union(int x,int y)
 {
+    
+    // find the representative of x and y if they are same then return as they are already in a same set
+    
     int x_reps = find(x);
     int y_reps = find(y);
+    if(x_reps == y_reps) return;
     if(rank[x_reps] < rank[y_reps]) Parent[x_reps] = y_reps;
     else if(rank[x_reps] > rank[y_reps]) Parent[y_reps] = x_reps;
     else

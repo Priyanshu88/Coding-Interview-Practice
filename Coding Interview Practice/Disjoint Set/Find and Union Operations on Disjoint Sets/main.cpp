@@ -1,8 +1,8 @@
-//
+// create parent array of size n same as total no.of elements
 
 int Parent[n];
 
-// 
+// initially put array element as array index from starting
 
 void Initialize()
 {
@@ -12,7 +12,9 @@ void Initialize()
     }
 }
 
-//
+// if find element x is equal to xth index Parent element
+// return x
+// otherwise find the Parent[x] recursively
 
 int find(int x)
 {
@@ -26,7 +28,11 @@ int find(int x)
     }
 }
 
-//
+// for finding union of x and y 
+// store the representative of x after finding x
+// then store thr representative of y after finding y
+// if they are same return otherwise make y_reps as child of x_reps
+
 
 void Union(int x,int y)
 {
